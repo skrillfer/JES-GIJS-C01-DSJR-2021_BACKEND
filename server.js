@@ -20,10 +20,13 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // allow cors requests from any origin and with credentials
-app.use(cors({ origin: (origin, callback) => callback(null, true), credentials: true }));
+app.use(cors({ origin: '*'}));
 
 // api routes
 app.use('/prosecutions', require('./prosecution/prosecution.controller'));
+app.use('/towns', require('./town/town.controller'));
+app.use('/departments', require('./department/department.controller'));
+
 
 // global error handler
 app.use(errorHandler);

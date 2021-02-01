@@ -6,6 +6,7 @@ module.exports = {
     getById,
     create,
     update,
+    getByCondition,
     delete: _delete
 };
 
@@ -56,4 +57,10 @@ async function getAll() {
 async function getById(id) {
     const obj = await getObject(id);
     return basicDetails(obj);
+}
+async function getByCondition(condition) {
+    const objs = await db.Town.findAll({
+        condition
+    });
+    return objs.map(x => basicDetails(x));
 }

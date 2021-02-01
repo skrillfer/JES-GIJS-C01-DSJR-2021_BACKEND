@@ -19,10 +19,8 @@ function createSchema(req, res, next) {
     const schema = Joi.object({
         name: Joi.string().required(),
         description: Joi.string().required(),
-        startDate: Joi.date().optional(),
-        deliveryDate: Joi.date().optional(),
-        finalDate: Joi.date().optional(),
-        repetitionType: Joi.number().required()
+        address: Joi.string().required(),
+        tel: Joi.string().required()
     });
     validateRequest(req, next, schema);
 }
@@ -37,8 +35,8 @@ function updateSchema(req, res, next) {
     const schemaRules = {
         name: Joi.string().required(),
         description: Joi.string().required(),
-        address: Joi.date().required(),
-        town: Joi.date().required()
+        address: Joi.string().required(),
+        tel: Joi.string().required()
     };
 
     const schema = Joi.object(schemaRules);

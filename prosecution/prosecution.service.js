@@ -11,8 +11,8 @@ module.exports = {
 
 
 function basicDetails(obj) {
-    const { id, name, description, address, town} = obj;
-    return { id, name, description, address, town };
+    const { id, name, description, address, tel} = obj;
+    return { id, name, description, address, tel };
 }
 
 async function create(params) {

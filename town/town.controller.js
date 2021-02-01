@@ -7,6 +7,8 @@ const service = require('./town.service');
 
 // routes
 router.post('/', createSchema, create);
+router.post('/filter', getByCondition);
+
 router.put('/:id', updateSchema, update);
 router.delete('/:id', _delete);
 router.get('/', getAll);
@@ -50,6 +52,12 @@ function _delete(req, res, next) {
 }
 
 function getAll(req, res, next) {
+    service.getAll()
+        .then(obj=> res.json(obj))
+        .catch(next);
+}
+
+function getByCondition(req, res, next) {
     service.getAll()
         .then(obj=> res.json(obj))
         .catch(next);

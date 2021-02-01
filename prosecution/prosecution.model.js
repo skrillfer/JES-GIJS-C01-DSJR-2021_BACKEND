@@ -7,7 +7,7 @@ function model(sequelize) {
         name: { type: DataTypes.STRING , allowNull: false},
         description: { type: DataTypes.STRING , allowNull: false},
         address: { type: DataTypes.STRING , allowNull: false},
-        townId: { type: DataTypes.INTEGER , allowNull: false},
+        tel:{ type: DataTypes.STRING , allowNull: false},
         createdAt: { type: DataTypes.DATE , allowNull: true},
         updatedAt: { type: DataTypes.DATE , allowNull: true}
     };
